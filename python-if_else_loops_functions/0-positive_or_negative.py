@@ -7,3 +7,4 @@ if number == 0:
     print(f"{number} is zero")
 if number < 0:
     print(f"{number} is negative")
+    
