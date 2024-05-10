@@ -9,7 +9,6 @@ for i in range(10):
         # Print the combination
         print("{:d}{:d}".format(i, j), end="")
         print_count += 1
-        
         # Print a comma and space if this is not the last combination
         if print_count < 45:  # 45 combinations: (10*9) / 2
             print(", ", end="")
