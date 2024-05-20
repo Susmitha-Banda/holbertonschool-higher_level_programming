@@ -1,0 +1,33 @@
+The ``text_indentation`` module
+======================
+
+Importing ``text_indentation``
+-------------------
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Testing ``text_indentation``
+-------------------
+
+no characters to print newline afterwards
+    >>> text_indentation("Hello World")
+    Hello World
+
+many characters to print newline afterwards
+    >>> text_indentation("Hello World. This is me: Life should be? Fun for everyone")
+    Hello World.
+    This is me:
+    Life should be?
+    Fun for everyone
+
+non-string argument
+    >>> text_indentation(0)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+no arguments
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
