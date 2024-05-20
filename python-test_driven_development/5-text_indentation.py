@@ -20,22 +20,12 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     separators = ['.', '?', ':']
-    lines = []
-    line_start = 0
-
-    for i in range(len(text)):
-        if text[i] in separators:
-            lines.append(text[line_start:i+1].strip())
-            lines.append('')  # Add two new lines
-            line_start = i + 1
-
-    # Add the last segment of text
-    if line_start < len(text):
-        lines.append(text[line_start:].strip())
-
-    # Print each line with no leading or trailing spaces
-    for idx, line in enumerate(lines):
-        if line:
-            print(line)  # Print each line
-            if idx % 2 == 0:  # Check if line is a separator line
-                print()  # Print extra newline after separator lines
+   
+    char = 0
+    while char < len(text):
+        print(text[char], end="")
+        if text[char] in separators:
+            print("\n")
+            while text[char + 1] == " ":
+                char += 1
+        char += 1
