@@ -16,8 +16,11 @@ no characters to print newline afterwards
 many characters to print newline afterwards
     >>> text_indentation("Hello World. This is me: Life should be? Fun for everyone")
     Hello World.
+    <BLANKLINE>
     This is me:
+    <BLANKLINE>
     Life should be?
+    <BLANKLINE>
     Fun for everyone
 
 non-string argument
