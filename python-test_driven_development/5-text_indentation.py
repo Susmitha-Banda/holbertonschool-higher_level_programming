@@ -34,6 +34,8 @@ def text_indentation(text):
         lines.append(text[line_start:].strip())
 
     # Print each line with no leading or trailing spaces
-    for line in lines:
+    for idx, line in enumerate(lines):
         if line:
-            print(line)
+            print(line, end='')  # Print each line without adding extra newline
+            if idx < len(lines) - 1:  # Prevent adding extra newline at the end
+                print()  # Print newline only between lines
