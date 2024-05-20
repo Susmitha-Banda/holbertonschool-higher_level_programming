@@ -1,0 +1,11 @@
+>>> add = __import__('test').add
+
+>>> add(1,2)
+3
+
+>>> add(2)
+100
+
+>>> add("abcd")
+Traceback (most recent call last):
+TypeError: a must be an Int
