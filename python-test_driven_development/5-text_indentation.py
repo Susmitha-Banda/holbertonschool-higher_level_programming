@@ -20,7 +20,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     separators = ['.', '?', ':']
-   
+
     char = 0
     while char < len(text):
         print(text[char], end="")
