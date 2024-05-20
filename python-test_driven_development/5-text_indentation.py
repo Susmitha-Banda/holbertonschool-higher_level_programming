@@ -36,6 +36,6 @@ def text_indentation(text):
     # Print each line with no leading or trailing spaces
     for idx, line in enumerate(lines):
         if line:
-            print(line, end='')  # Print each line without adding extra newline
-            if idx < len(lines) - 1:  # Prevent adding extra newline at the end
-                print()  # Print newline only between lines
+            print(line)  # Print each line
+            if idx % 2 == 0:  # Check if line is a separator line
+                print()  # Print extra newline after separator lines
