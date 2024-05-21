@@ -71,4 +71,4 @@ class Rectangle:
         """method: __del__
            deletes instance of Rectangle class, and prints "bye" message
         """
-    print("Bye rectangle...")
+        print("Bye rectangle...")
