@@ -4,16 +4,15 @@
 
 class Rectangle:
     """create an empty rectangle object."""
-
-
-def __init__(self, width=0, height=0):
-    """initialising a new rectangle
+    
+    def __init__(self, width=0, height=0):
+        """initialising a new rectangle
         Args:
         width (int): width of the rectangle.
         height (int): height of the rectangle.
-    """
-    self.width = width
-    self.height = height
+        """
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
