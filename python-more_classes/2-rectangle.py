@@ -4,7 +4,7 @@
 
 class Rectangle:
     """create an empty rectangle object."""
-    
+
     def __init__(self, width=0, height=0):
         """initialising a new rectangle
         Args:
