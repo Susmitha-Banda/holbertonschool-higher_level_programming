@@ -1,0 +1,80 @@
+Using class ``BaseGeometry`` 
+-------------------
+
+Firstly, import ``BaseGeometry`` from the ``7-base_geometry`` module:
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+
+Tests:
+
+Test for positive, negative and 0 integer
+
+    Test - checking passing a "negative integer"
+    	>>> bg.integer_validator("distance", -11)
+        Traceback (most recent call last):
+        ...
+        ValueError: distance must be greater than 0
+    
+    Test - checking passing a "positive integer"
+    	>>> bg.integer_validator("my_int", 11)
+    
+    Test - checking passing value an "interger of 0"
+    	>>> bg.integer_validator("age", 0)
+        Traceback (most recent call last):
+        ...
+        ValueError: age must be greater than 0
+
+    
+Test for different data structure
+
+    Test - checking passing value a "set"
+        >>> bg.integer_validator("age", {1, 9})
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+    Test - checking passing value a "tuple" with one value
+        >>> bg.integer_validator("age", (4,))
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+    
+    Test - checking passing value a "list" with one value
+        >>> bg.integer_validator("age", [3])
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+
+Testing passing value with "string", "None", "bool", "missing one value"
+
+    Test - checking passing value a "stirng"
+    	>>> bg.integer_validator("name", "John")
+        Traceback (most recent call last):
+        ...
+        TypeError: name must be an integer
+
+    Test - checking a value is "None"
+        >>> bg.integer_validator("age", None)
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+    
+    Test - checking passing value a "bool(True)"
+        >>> bg.integer_validator("age", True)
+        Traceback (most recent call last):
+        ...
+        TypeError: age must be an integer
+
+    Test - checking missing value argument
+        >>> bg.integer_validator("age")
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+    Test - area()
+    	>>> bg.area()
+        Traceback (most recent call last):
+        ...
+        Exception: area() is not implemented
