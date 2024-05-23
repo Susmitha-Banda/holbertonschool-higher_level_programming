@@ -48,3 +48,15 @@ def shape_info(shape):
     perimeter = shape.perimeter()
     print(f"Area: {area}")
     print(f"Perimeter: {perimeter}")
+
+
+# Testing with Circle and Rectangle instances
+if __name__ == "__main__":
+    circle = Circle(5)
+    rectangle = Rectangle(4, 6)
+
+    print("Circle Info:")
+    shape_info(circle)
+
+    print("\nRectangle Info:")
+    shape_info(rectangle)
