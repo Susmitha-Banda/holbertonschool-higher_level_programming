@@ -13,14 +13,14 @@ class Animal(ABC):
         pass
 
 
-class dog(Animal):
+class Dog(Animal):
     """this is a dog subclass of Animal"""
     def sound(self):
         """sound method of dog class"""
         return ("Bark")
 
 
-class cat(Animal):
+class Cat(Animal):
     """this is a cat subclass of Animal"""
     def sound(self):
         """sound method of cat class"""
