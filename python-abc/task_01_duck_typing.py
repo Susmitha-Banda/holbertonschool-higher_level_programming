@@ -12,7 +12,7 @@ class Shape(ABC):
         pass
 
     @abstractmethod
-    def permieter(self):
+    def perimeter(self):
         pass
 
 
