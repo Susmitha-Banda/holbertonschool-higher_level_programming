@@ -23,7 +23,7 @@ class Circle(Shape):
 
     def area(self):
         '''area of a circle, 𝜋 × radius2 '''
-        return ("math.pi * (self.radius ** 2)")
+        return (math.pi * (self.radius ** 2))
 
     def permieter(self):
         '''circumference of a circle is 2𝜋𝑟 '''
