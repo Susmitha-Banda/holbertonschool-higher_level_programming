@@ -25,7 +25,7 @@ class Circle(Shape):
         '''area of a circle, 𝜋 × radius2 '''
         return (math.pi * (self.radius ** 2))
 
-    def permieter(self):
+    def perimeter(self):
         '''circumference of a circle is 2𝜋𝑟 '''
         return (2 * math.pi * self.radius)
 
@@ -39,7 +39,7 @@ class Rectangle(Shape):
     def area(self):
         return (self.width * self.height)
 
-    def permieter(self):
+    def perimeter(self):
         return 2 * (self.width + self.height)
 
 
