@@ -10,5 +10,9 @@ def to_json_string(my_obj):
     if isinstance(my_obj, set):
         '''the json.dumps() function in Python does not support
         serializing set objects directly to JSON.'''
-        return json.dumps(list(my_obj))
+        try:
+            return json.dumps(list(my_obj))
+        except Exception:
+            raise TypeError("Object of type set is not JSON serializable")
+
     return json.dumps(my_obj)
