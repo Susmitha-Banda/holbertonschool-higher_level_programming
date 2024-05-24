@@ -20,6 +20,7 @@ class Circle(Shape):
     """creating circle class inherits from Shape class"""
     def __init__(self, radius):
         if radius < 0:
+            radius = abs(radius)
             raise ValueError("Radius cannot be negative")
         self.radius = radius
 
