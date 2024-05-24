@@ -5,14 +5,11 @@ import json
 
 
 def to_json_string(my_obj):
-    """module to_json_strin
-     returns JSON representation"""
-    if isinstance(my_obj, set):
-        '''the json.dumps() function in Python does not support
-        serializing set objects directly to JSON.'''
-        try:
-            return json.dumps(list(my_obj))
-        except Exception:
-            raise TypeError("Object of type set is not JSON serializable")
+    """Returns JSON representation of an object."""
+    def convert(obj):
+        if isinstance(obj, set):
+            return list(obj)
+        raise TypeError(f"Object of type {type(obj).__name__}
+                        is not JSON serializable")
 
-    return json.dumps(my_obj)
+    return json.dumps(my_obj, default=convert)
