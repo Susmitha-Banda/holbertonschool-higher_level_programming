@@ -9,7 +9,6 @@ def to_json_string(my_obj):
     def convert(obj):
         if isinstance(obj, set):
             return list(obj)
-        raise TypeError(f"Object of type {type(obj).__name__}
-                        is not JSON serializable")
+        raise TypeError("Object of type is not JSON serializable")
 
     return json.dumps(my_obj, default=convert)
