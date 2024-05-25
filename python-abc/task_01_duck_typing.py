@@ -22,7 +22,7 @@ class Circle(Shape):
         if radius < 0:
             radius = abs(radius)
             # raise ValueError("radius must be >= 0")
-        self.radius = radius
+        self.__radius = radius
 
     @property
     def radius(self):
@@ -30,11 +30,11 @@ class Circle(Shape):
 
     def area(self):
         '''area of a circle, 𝜋 × radius2 '''
-        return (math.pi * (self.__radius ** 2))
+        return (math.pi * (self.radius ** 2))
 
     def perimeter(self):
         '''circumference of a circle is 2𝜋𝑟 '''
-        return (2 * math.pi * self.__radius)
+        return (2 * math.pi * self.radius)
 
 
 class Rectangle(Shape):
