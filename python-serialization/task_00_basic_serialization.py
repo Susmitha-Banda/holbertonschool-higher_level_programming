@@ -15,5 +15,6 @@ def serialize_and_save_to_file(data, filename):
 
 def load_and_deserialize(filename):
     """Load JSON data from the specified file and deserialize it."""
-    with open(filename, "r") as f:
-        return json.loads(f)
+    with open(filename) as f:
+        data = f.read()  # Read the content of the file
+        return json.loads(data)
