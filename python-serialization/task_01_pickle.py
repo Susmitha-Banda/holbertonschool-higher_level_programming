@@ -37,9 +37,8 @@ class CustomObject:
         Using the pickle module, it will load and return an instance
         of the CustomObject from the provided filename."""
         try:
-            with open(filename, "rb")as f:
-                return pickle.loads(f)
-        except (FileNotFoundError, IOError, pickle.UnpicklingError) as e:
-            # Handle errors related to file access and unpickling
-            print(f"Error loading object from file: {e}")
+            with open(filename, "rb") as file:
+                return pickle.load(file)
+        except (FileNotFoundError, pickle.UnpicklingError, EOFError) as e:
+            print(f"{e}")
             return None
