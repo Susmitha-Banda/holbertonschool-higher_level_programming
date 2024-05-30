@@ -22,17 +22,16 @@ def fetch_and_save_posts():
         # list comprehension
         posts = [{'id': data['id'], 'title': data['title'],
                   'body': data['body']} for data in response.json()]
+        # Specify fieldnames for the CSV header
+        fieldnames = ['id', 'title', 'body']
+        # Open CSV file in write mode
+        with open("posts.csv", 'w', newline='', encoding='utf-8') as csvfile:
+            # Create a DictWriter object
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+            # Write the header row
+            writer.writeheader()
 
-    # Specify fieldnames for the CSV header
-    fieldnames = ['id', 'title', 'body']
-    # Open CSV file in write mode
-    with open("posts.csv", 'w', newline='', encoding='utf-8') as csvfile:
-        # Create a DictWriter object
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-
-        # Write the header row
-        writer.writeheader()
-
-        # Write each post as a row in the CSV file
-        for post in posts:
-            writer.writerow(post)
+            # Write each post as a row in the CSV file
+            for post in posts:
+                print(post)
+                writer.writerow(post)
