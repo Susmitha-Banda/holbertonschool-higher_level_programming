@@ -17,6 +17,10 @@ Any of these will be needed to start SQL server.
 2) check if the image is pulled --> `docker images`
 3) Run the image to start the container -> `docker run <imageTag>`
 
+``` 
+docker run  -e MYSQL_ROOT_PASSWORD=pwd -d -p 3306:3306 mysql
+```
+
 
 #
 
@@ -28,3 +32,25 @@ It's a workspace to write the queries.
 4) Shell Terminal.
 
 #### In our case, we will use DBeaver as it's mostly widely used.
+
+#
+
+### Issue faced
+
+``` 
+Modify DBeaver Connection Settings
+Open DBeaver.
+
+Edit your MySQL connection:
+
+Navigate to the Database Navigator.
+Right-click your MySQL connection and select Edit Connection.
+Adjust the connection settings:
+
+Click on the Driver Properties tab.
+
+Add a new property:
+
+Property Name: allowPublicKeyRetrieval
+Value: true
+```
