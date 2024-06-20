@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Lists all states with name starting with 'N' from the hbtn_0e_0_usa database"""
+"""
+Lists all states with name starting with 'N' from the hbtn_0e_0_usa database
+"""
 
 import MySQLdb
 import sys
@@ -13,11 +15,12 @@ def fetch_states_starting_with_N(username, password, database):
                          passwd=password,
                          db=database,
                          port=3306)
-    
+
     # create a cursor object
     cursor = db.cursor()
 
-    # define the SQL query with a WHERE clause to filter states starting with 'N'
+    # define the SQL query with a WHERE
+    # clause to filter states starting with 'N'
     query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
 
     # execute the query
@@ -34,9 +37,13 @@ def fetch_states_starting_with_N(username, password, database):
     cursor.close()
     db.close()
 
+
 if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print("Usage: python 1-filter_states.py <username> <password> <database>")
+        print("Usage: python 1-filter_states.py"
+              "<username>"
+              "<password>"
+              "<database>")
         sys.exit(1)
 
     username = sys.argv[1]
