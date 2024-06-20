@@ -21,7 +21,7 @@ def fetch_states(username, password, database):
     #fetch all rows
     states = cursor.fetchall()
     #print results in the required format
-    for states in states:
+    for state in states:
         print(state)
     #close cursor and connection
     cursor.close()
