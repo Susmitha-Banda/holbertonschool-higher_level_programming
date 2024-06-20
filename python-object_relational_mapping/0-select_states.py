@@ -29,10 +29,12 @@ def fetch_states(username, password, database):
     db.close()
 
 
-if __name__ == '__main__':    # This line checks if the script is being run directly by the Python interpreter.
-# When a Python file is executed directly (not imported as a module), the special variable __name__ is set to '__main__'
+if __name__ == '__main__':
     if len(sys.argv) != 4:
-        print("Usage: python 0-select_states.py <username> <password> <database>")
+        print("Usage: python 0-select_states.py"
+              "< username >"
+              "< password >"
+              "< database >")
         sys.exit(1)
     username = sys.argv[1]
     password = sys.argv[2]
