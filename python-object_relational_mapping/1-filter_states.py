@@ -21,7 +21,7 @@ def fetch_states_starting_with_N(username, password, database):
 
     # define the SQL query with a WHERE
     # clause to filter states starting with 'N'
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
 
     # execute the query
     cursor.execute(query)
