@@ -27,11 +27,11 @@ def main():
     cursor = db.cursor()
     # create the sql query
     query = (
-        "SELECT * FROM states WHERE name = '{0}' "
-        "ORDER BY id ASC".format(state_name)
+        "SELECT * FROM states WHERE BINARY name = '{0}' "
+        "ORDER BY id ASC".format(sys.argv[4])
     )
-    # execute the query with state name
-    cursor.execute(query, (state_name,))
+    # execute the query
+    cursor.execute(query)
     # fetch all the rows from the executed query
     rows = cursor.fetchall()
     # loop through the rows and  print each one
