@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Nameless module to suck data out from the database
+"""Lists the first object in the State table within the
+hbtn_0e_6_usa database using SQLalchemy.
 """
 import sys
 from model_state import Base, State
