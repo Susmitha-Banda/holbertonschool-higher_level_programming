@@ -7,9 +7,11 @@ import csv
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def home():
     return render_template('index.html')
+
 
 @app.route('/items')
 def items():
@@ -17,10 +19,11 @@ def items():
 
     with open("items.json", 'r') as f:
         rows = json.load(f)
-    for key,value in rows.items():
+    for key, value in rows.items():
         items_list = value
 
     return render_template('items.html', items=items_list)
+
 
 @app.route('/products')
 def products():
@@ -35,7 +38,8 @@ def products():
 
     return render_template('product_display.html', data=data, source=source, id=id)
 
-def load_json_data(filename, wanted_id = None):
+
+def load_json_data(filename, wanted_id=None):
     """ Load JSON data from file and returns as dictionary """
 
     data = []
@@ -53,16 +57,18 @@ def load_json_data(filename, wanted_id = None):
 
             if (wanted_id is not None and key == wanted_id) or (wanted_id is None):
                 product = {}
-                for k,v in row.items():
+                for k, v in row.items():
                     product[k] = v
                 data.append(product)
 
     except ValueError as exc:
-        raise ValueError("Unable to load data from file '{}'".format(filename)) from exc
+        raise ValueError(
+            "Unable to load data from file '{}'".format(filename)) from exc
 
     return data
 
-def load_csv_data(filename, wanted_id = None):
+
+def load_csv_data(filename, wanted_id=None):
     """ Load JSON data from file and returns as dictionary """
 
     data = []
@@ -77,9 +83,11 @@ def load_csv_data(filename, wanted_id = None):
                 if (wanted_id is not None and row['id'] == wanted_id) or (wanted_id is None):
                     data.append(row)
     except ValueError as exc:
-        raise ValueError("Unable to load data from file '{}'".format(filename)) from exc
+        raise ValueError(
+            "Unable to load data from file '{}'".format(filename)) from exc
 
     return data
+
 
 # Set debug=True for the server to auto-reload when there are changes
 if __name__ == '__main__':
